@@ -1,0 +1,189 @@
+ .stretch-card>.card {
+     width: 100%;
+     min-width: 100%
+ }
+ 
+ .card{
+     margin-bottom:-1px;
+ }
+
+ body {
+     background-color: #f9f9fa
+ }
+
+ .flex {
+     -webkit-box-flex: 1;
+     -ms-flex: 1 1 auto;
+     flex: 1 1 auto
+ }
+
+ @media (max-width:991.98px) {
+     .padding {
+         padding: 1.5rem
+     }
+ }
+
+ @media (max-width:767.98px) {
+     .padding {
+         padding: 1rem
+     }
+ }
+
+ .padding {
+     padding: 3rem
+ }
+
+ .owl-carousel .item {
+     margin: 1px
+ }
+
+ .owl-carousel .item img {
+     display: block;
+     width: 100%;
+     height: 100%;
+ }
+
+ .owl-carousel .item {
+     margin: 3px
+ }
+
+ .owl-carousel {
+    margin-bottom: 0px;
+}
+ 
+ .bg-black{
+     background-color: #000000 !important;
+ }
+ 
+ .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        /* Make the image fully responsive */
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-inner img {
+            margin: auto;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: #777;
+        }
+        /*Parallax*/
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3,
+        .bgimg-4,
+        .bgimg-5,
+        .bgimg-6 {
+            position: relative;
+            opacity: 0.65;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /*Logo*/
+        .bgimg-1 {
+           background-image: url("https://imgur.com/MvB89Zx.png");
+            min-height: 30%;
+            max-height: 70%;
+        }
+        /*Maringá*/
+        .bgimg-2 {
+            background-image: url("https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg");
+            min-height: 400px;
+        }
+        /*3*/
+        .bgimg-3 {
+            /*background-image: url("http://static.simpledesktops.com/uploads/desktops/2013/07/26/sunset_wide.png");
+            */
+            background-image: url(https://wallpapersmug.com/u/45a4cb/rocket-launch.jpg);
+            min-height: 300px;
+        }
+        
+        .bgimg-4 {
+            background-image: url("https://imgur.com/QNClICi.png");
+            min-height: 400px;
+        }
+        /*5*/
+        .bgimg-5 {
+            background-image: url("http://getwallpapers.com/wallpaper/full/5/5/a/1295074-amazing-pioneer-dj-wallpaper-hd-2048x1152.jpg");
+            min-height: 400px;
+        }
+        /*https://images.pexels.com/photos/2440079/pexels-photo-2440079.jpeg*/
+        .bgimg-6 {
+            background-image: url("https://images.pexels.com/photos/2440079/pexels-photo-2440079.jpeg");
+            min-height: 400px;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+        
+        .caption1 {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+        .caption span.border {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+        
+        .caption1 span.border {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+
+        h3 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font: 20px "Lato", sans-serif;
+            color: #111;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+
+            .bgimg-1,
+            .bgimg-2,
+            .bgimg-3,
+            .bgimg-4,
+            .bgimg-5{
+                background-attachment: scroll;
+            }
+        }
