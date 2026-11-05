@@ -54,12 +54,9 @@
 
         /* Glassmorphism Navbar */
         .glass-nav {
-            background: rgba(11, 15, 25, 0.88);
+            background: rgba(11, 15, 25, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-        }
-        .light .glass-nav {
-            background: rgba(255, 255, 255, 0.92);
         }
 
         /* Cyber Hover Cards */
@@ -68,7 +65,7 @@
         }
         .cyber-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px -5px rgba(0, 242, 254, 0.12);
+            box-shadow: 0 12px 30px -5px rgba(0, 242, 254, 0.15);
         }
 
         /* Toast Popup */
@@ -92,10 +89,10 @@
         }
     </style>
 </head>
-<body class="bg-[#0b0f19] text-slate-100 dark:bg-[#0b0f19] dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-slate-950">
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-slate-950">
 
     <!-- TOAST NOTIFICATION CONTAINER -->
-    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 hidden opacity-0 translate-y-2 bg-slate-900 border border-cyan-500/50 text-slate-100 px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 font-mono text-xs">
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 hidden opacity-0 translate-y-2 bg-[#161b22] border border-cyan-500/50 text-slate-100 px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 font-mono text-xs">
         <i class="fas fa-circle-check text-cyan-400 text-base" id="toast-icon"></i>
         <span id="toast-message">Kopierat till Urklipp!</span>
     </div>
@@ -103,7 +100,7 @@
     <!-- ========================================== -->
     <!-- HEADER & NAVIGATION                        -->
     <!-- ========================================== -->
-    <header class="fixed top-0 left-0 right-0 z-40 glass-nav border-b border-slate-800 transition-all duration-300">
+    <header class="fixed top-0 left-0 right-0 z-40 glass-nav border-b border-slate-800/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Brand Logo -->
@@ -131,18 +128,12 @@
                 <a href="#contact" class="text-slate-300 hover:text-cyan-400 transition-colors">Kontakt</a>
             </nav>
 
-            <!-- LIA Status & Theme Switcher -->
+            <!-- LIA Status Badge & Mobile Menu Toggle -->
             <div class="flex items-center space-x-3">
                 <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono hover:bg-cyan-900/60 transition-all">
                     <i class="fas fa-bullseye text-cyan-400 animate-spin" style="animation-duration: 6s;"></i>
                     <span>LIA / Praktik 2027</span>
                 </a>
-
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" aria-label="Toggle theme" class="p-2.5 rounded-xl bg-slate-800 text-slate-300 border border-slate-700 hover:border-cyan-500/50 transition-all">
-                    <i id="theme-toggle-dark-icon" class="fas fa-moon text-base hidden"></i>
-                    <i id="theme-toggle-light-icon" class="fas fa-sun text-base text-amber-400"></i>
-                </button>
 
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" aria-label="Toggle menu" class="lg:hidden p-2.5 rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
@@ -167,7 +158,7 @@
     <main class="flex-grow pt-20">
 
         <!-- ========================================== -->
-        <!-- LIA HIGHLIGHT BANNER                        -->
+        <!-- LIA HIGHLIGHT BANNER                       -->
         <!-- ========================================== -->
         <section class="bg-gradient-to-r from-cyan-950 via-slate-900 to-emerald-950 border-b border-cyan-500/30 py-3 px-4">
             <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm font-mono text-center sm:text-left">
@@ -495,131 +486,217 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl font-bold text-white mb-3">Nyckelkompetenser</h2>
-                    <p class="text-slate-400">Filtrera eller sök direkt bland verktyg, protokoll och plattformar.</p>
+                    <h2 class="text-3xl font-bold text-white mb-3">Marknadsefterfrågade Nyckelkompetenser</h2>
+                    <p class="text-slate-400">Sök eller filtrera bland de mest eftertraktade kompetenserna inom nätverk, brandväggar, kryptering, IDS/IPS och systemhärdning.</p>
                     <div class="w-16 h-1 bg-cyan-500 mx-auto rounded-full mt-4"></div>
                 </div>
 
                 <!-- Live Search Bar -->
                 <div class="max-w-md mx-auto mb-8 relative font-mono text-sm">
                     <i class="fas fa-search absolute left-4 top-3.5 text-slate-500"></i>
-                    <input type="text" id="skill-search-input" placeholder="Sök kompetens (t.ex. FortiGate, Wireshark, C#)..." class="w-full pl-11 pr-4 py-3 rounded-xl bg-[#0b0f19] border border-[#30363d] text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors text-xs">
+                    <input type="text" id="skill-search-input" placeholder="Sök kompetens (t.ex. FortiGate, Suricata, OSPF, BGP, LUKS)..." class="w-full pl-11 pr-4 py-3 rounded-xl bg-[#0b0f19] border border-[#30363d] text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors text-xs">
                 </div>
 
                 <!-- Filter Category Buttons -->
                 <div class="flex flex-wrap justify-center gap-2 mb-10" id="skill-filter-btns">
                     <button data-filter="all" class="skill-filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-cyan-500 text-slate-950 transition-all">
-                        Alla
-                    </button>
-                    <button data-filter="sys" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
-                        System & Plattformar
+                        Alla (8)
                     </button>
                     <button data-filter="net" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
-                        Nätverk
+                        Nätverk & Routing
                     </button>
-                    <button data-filter="sec" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
-                        Säkerhet
+                    <button data-filter="fw" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
+                        Brandväggar & VPN
                     </button>
-                    <button data-filter="lab" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
-                        Lab & Virtualisering
+                    <button data-filter="ids" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
+                        IDS/IPS & Trafik
                     </button>
-                    <button data-filter="tools" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
-                        Verktyg
+                    <button data-filter="server" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
+                        Server & Härdning
+                    </button>
+                    <button data-filter="offsec" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
+                        Offensiv Säkerhet
+                    </button>
+                    <button data-filter="virt" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-cyan-500/50 transition-all">
+                        Virtualisering & Infra
                     </button>
                 </div>
 
                 <!-- Skills Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-grid">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" id="skills-grid">
                     
-                    <!-- Category: System & Plattformar -->
-                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d]" data-category="sys">
+                    <!-- 1. Nätverk & Routing/Switching -->
+                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d] cyber-card" data-category="net">
                         <div class="flex items-center gap-3 mb-4">
-                            <i class="fab fa-linux text-cyan-400 text-xl"></i>
-                            <h3 class="font-bold text-white">System & Plattformar</h3>
+                            <div class="w-10 h-10 rounded-xl bg-cyan-950 text-cyan-400 flex items-center justify-center text-lg border border-cyan-800">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Nätverk & Routing / Switching</h3>
+                                <p class="text-[11px] font-mono text-cyan-400">Avancerad nätverksarkitektur & protokoll</p>
+                            </div>
                         </div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono">
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">Linux</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">Windows</span>
                             <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">Cisco IOS</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">Debian</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">Windows Server</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">OSPF & OSPFv3</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">EIGRP</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">RIPv2</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">VLAN</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">802.1Q trunking</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">Router-on-a-Stick</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">NAT/PAT</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">DHCP Relay</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">VLSM / CIDR</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">ACL (Access Control Lists)</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">IPv6 & Dualstack</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-700">BGP</span>
                         </div>
                     </div>
 
-                    <!-- Category: Nätverk -->
-                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d]" data-category="net">
+                    <!-- 2. Brandväggar & Säkerhetszoner -->
+                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d] cyber-card" data-category="fw">
                         <div class="flex items-center gap-3 mb-4">
-                            <i class="fas fa-network-wired text-emerald-400 text-xl"></i>
-                            <h3 class="font-bold text-white">Nätverk & Protokoll</h3>
+                            <div class="w-10 h-10 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center text-lg border border-emerald-800">
+                                <i class="fas fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Brandväggar & Säkerhetszoner</h3>
+                                <p class="text-[11px] font-mono text-emerald-400">NGFW & Zoneringspolicy</p>
+                            </div>
                         </div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono">
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">TCP/IP</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">Subnetting</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">Routing (OSPF/BGP)</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">Switching</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">VLAN</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">DNS & DHCP</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">nftables</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">FortiGate (FortiOS 7.x NGFW)</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">Cisco ZBFW</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">pfSense</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">Linux nftables / iptables</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-emerald-300 border border-slate-700">Zonindelning (WAN / LAN / DMZ)</span>
                         </div>
                     </div>
 
-                    <!-- Category: Säkerhet -->
-                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d]" data-category="sec">
+                    <!-- 3. Kryptering & VPN -->
+                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d] cyber-card" data-category="fw">
                         <div class="flex items-center gap-3 mb-4">
-                            <i class="fas fa-shield-virus text-purple-400 text-xl"></i>
-                            <h3 class="font-bold text-white">Säkerhet & Analys</h3>
+                            <div class="w-10 h-10 rounded-xl bg-purple-950 text-purple-400 flex items-center justify-center text-lg border border-purple-800">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Kryptering & VPN</h3>
+                                <p class="text-[11px] font-mono text-purple-400">Tunnlar, PKI & kryptografiska protokoll</p>
+                            </div>
                         </div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono">
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">Nmap</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">Burp Suite</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">Metasploit</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">Wireshark</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">Nätverkssäkerhet</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">Sårbarhetsanalys</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">FortiGate / pfSense</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">IPSec Site-to-Site (IKEv2, AES-256)</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">WireGuard</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">OpenVPN</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">SSH-tunnlar</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">TLS 1.3 & QUIC</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">PKI / X.509</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-purple-300 border border-slate-700">OpenSSL</span>
                         </div>
                     </div>
 
-                    <!-- Category: Lab & Virtualisering -->
-                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d]" data-category="lab">
+                    <!-- 4. Trafikanalys & IDS/IPS -->
+                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d] cyber-card" data-category="ids">
                         <div class="flex items-center gap-3 mb-4">
-                            <i class="fas fa-box font-mono text-amber-400 text-xl"></i>
-                            <h3 class="font-bold text-white">Lab & Virtualisering</h3>
+                            <div class="w-10 h-10 rounded-xl bg-amber-950 text-amber-400 flex items-center justify-center text-lg border border-amber-800">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Trafikanalys & IDS / IPS</h3>
+                                <p class="text-[11px] font-mono text-amber-400">Paketanalys & intrångsdetektering</p>
+                            </div>
                         </div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono">
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">Proxmox VE</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">GNS3</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">Docker</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">VMware</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">Suricata (NFQUEUE, DPI, Snort-regler)</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">Fail2Ban</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">Wireshark</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">tcpdump</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">conntrack</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-amber-300 border border-slate-700">Pi-hole</span>
                         </div>
                     </div>
 
-                    <!-- Category: Verktyg -->
-                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d]" data-category="tools">
+                    <!-- 5. Säker E-postinfrastruktur -->
+                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d] cyber-card" data-category="virt">
                         <div class="flex items-center gap-3 mb-4">
-                            <i class="fas fa-terminal text-sky-400 text-xl"></i>
-                            <h3 class="font-bold text-white">Verktyg & Scripting</h3>
+                            <div class="w-10 h-10 rounded-xl bg-sky-950 text-sky-400 flex items-center justify-center text-lg border border-sky-800">
+                                <i class="fas fa-at"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Säker E-postinfrastruktur</h3>
+                                <p class="text-[11px] font-mono text-sky-400">Autentisering & Säker Mailserverdrift</p>
+                            </div>
                         </div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono">
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">Git / GitHub</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">Bash</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">Python</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">Kali Linux</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">C# / .NET</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">SPF</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">DKIM (RSA-2048)</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">DMARC</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">DNSSEC</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">Postfix</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">Dovecot</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-sky-300 border border-slate-700">BIND9 DNS</span>
                         </div>
                     </div>
 
-                    <!-- Category: Systems & Enterprise Tools -->
-                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d]" data-category="sys">
+                    <!-- 6. Serverdrift & Systemhärdning -->
+                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d] cyber-card" data-category="server">
                         <div class="flex items-center gap-3 mb-4">
-                            <i class="fas fa-industry text-pink-400 text-xl"></i>
-                            <h3 class="font-bold text-white">Företagssystem & El</h3>
+                            <div class="w-10 h-10 rounded-xl bg-pink-950 text-pink-400 flex items-center justify-center text-lg border border-pink-800">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Serverdrift & Systemhärdning</h3>
+                                <p class="text-[11px] font-mono text-pink-400">Linux/Windows Server & Säkerhetskontroller</p>
+                            </div>
                         </div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono">
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">SAP System</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">Elguide & Serviceinfo</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">Elinstallationer</span>
-                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">PxE Network Boot</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">Debian / Ubuntu Server</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">Windows Server 2022</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">GPO & AppLocker</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">AppArmor</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">2FA (libpam-google-authenticator)</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">LUKS-kryptering & LVM</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">RAID-5 (mdadm)</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-pink-300 border border-slate-700">Bash & PowerShell</span>
+                        </div>
+                    </div>
+
+                    <!-- 7. Offensiv Säkerhet & Test -->
+                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d] cyber-card" data-category="offsec">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-red-950 text-red-400 flex items-center justify-center text-lg border border-red-800">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Offensiv Säkerhet & Test</h3>
+                                <p class="text-[11px] font-mono text-red-400">Sårbarhetsbedömning & Penetrationstest</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-red-300 border border-slate-700">Kali Linux</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-red-300 border border-slate-700">Metasploit Framework</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-red-300 border border-slate-700">Nmap (NSE Scripts)</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-red-300 border border-slate-700">CVSSv3 Sårbarhetsbedömning</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-red-300 border border-slate-700">Teknisk Rapportskrivning</span>
+                        </div>
+                    </div>
+
+                    <!-- 8. Virtualisering & Miljöer -->
+                    <div class="skill-card p-6 rounded-2xl bg-[#161b22] border border-[#30363d] cyber-card" data-category="virt">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-teal-950 text-teal-400 flex items-center justify-center text-lg border border-teal-800">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Virtualisering & Miljöer</h3>
+                                <p class="text-[11px] font-mono text-teal-400">Hypervisors, Kluster & Labbarkitektur</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-teal-300 border border-slate-700">GNS3 Nätverkssimulering</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-teal-300 border border-slate-700">VMware Workstation / ESXi</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-teal-300 border border-slate-700">Proxmox VE (Kluster)</span>
+                            <span class="skill-tag px-2.5 py-1 rounded bg-slate-900 text-teal-300 border border-slate-700">KVM / QEMU</span>
                         </div>
                     </div>
 
@@ -952,121 +1029,86 @@
 
 
         <!-- ========================================== -->
-        <!-- CONTACT SECTION                            -->
+        <!-- DIRECT CONTACT SECTION (SLEEK CARD)        -->
         <!-- ========================================== -->
         <section id="contact" class="py-20 bg-[#161b22]/60 border-t border-[#30363d]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-center max-w-3xl mx-auto mb-12">
                     <h2 class="text-3xl font-bold text-white mb-3">Kontakta Iago</h2>
-                    <p class="text-slate-400">Vill du erbjuda LIA-praktikplats (Jan–Jun 2027) eller diskutera en jobbmöjlighet?</p>
+                    <p class="text-slate-400">Vill du erbjuda LIA-praktikplats (Jan–Jun 2027) eller diskutera ett samarbete? Hör av dig direkt via telefon, e-post eller LinkedIn.</p>
                     <div class="w-16 h-1 bg-cyan-500 mx-auto rounded-full mt-4"></div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Sleek Centered Contact Card -->
+                <div class="bg-[#161b22] p-8 sm:p-12 rounded-3xl border border-[#30363d] shadow-2xl space-y-8 cyber-card">
                     
-                    <!-- Left: Contact Details Cards -->
-                    <div class="lg:col-span-5 space-y-6">
-                        <div class="p-8 rounded-2xl bg-[#161b22] border border-[#30363d] space-y-6">
-                            <h3 class="text-xl font-bold text-white">Kontaktuppgifter</h3>
-
-                            <div class="space-y-4 font-mono text-xs sm:text-sm">
-                                
-                                <div class="flex items-center justify-between p-3.5 rounded-xl bg-[#0b0f19] border border-slate-800">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-9 h-9 rounded-lg bg-cyan-950 text-cyan-400 flex items-center justify-center shrink-0">
-                                            <i class="fas fa-envelope"></i>
-                                        </div>
-                                        <div class="truncate">
-                                            <p class="text-[10px] text-slate-500 uppercase">E-post</p>
-                                            <span class="text-slate-200 truncate font-semibold">iago_henriquefs@hotmail.com</span>
-                                        </div>
-                                    </div>
-                                    <button onclick="copyToClipboard('iago_henriquefs@hotmail.com', 'E-post kopierad!')" class="p-2 text-slate-400 hover:text-cyan-400 transition-colors" title="Kopiera e-post">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono">
+                        
+                        <!-- Email Box -->
+                        <div class="p-6 rounded-2xl bg-[#0b0f19] border border-slate-800 flex flex-col justify-between space-y-4 hover:border-cyan-500/60 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-950 text-cyan-400 flex items-center justify-center text-xl shrink-0 border border-cyan-800">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
-
-                                <div class="flex items-center justify-between p-3.5 rounded-xl bg-[#0b0f19] border border-slate-800">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-9 h-9 rounded-lg bg-emerald-950 text-emerald-400 flex items-center justify-center shrink-0">
-                                            <i class="fas fa-phone"></i>
-                                        </div>
-                                        <div>
-                                            <p class="text-[10px] text-slate-500 uppercase">Telefon</p>
-                                            <span class="text-slate-200 font-semibold">+46 736 59 3010</span>
-                                        </div>
-                                    </div>
-                                    <button onclick="copyToClipboard('+46736593010', 'Telefonnummer kopierat!')" class="p-2 text-slate-400 hover:text-emerald-400 transition-colors" title="Kopiera nummer">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
+                                <div class="truncate">
+                                    <p class="text-[10px] text-slate-500 uppercase tracking-wider">E-post</p>
+                                    <a href="mailto:iago_henriquefs@hotmail.com" class="text-sm sm:text-base font-bold text-slate-100 hover:text-cyan-400 transition-colors truncate block">
+                                        iago_henriquefs@hotmail.com
+                                    </a>
                                 </div>
-
-                                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#0b0f19] border border-slate-800">
-                                    <div class="w-9 h-9 rounded-lg bg-purple-950 text-purple-400 flex items-center justify-center shrink-0">
-                                        <i class="fas fa-location-dot"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-[10px] text-slate-500 uppercase">Plats</p>
-                                        <span class="text-slate-200 font-semibold">Göteborg, Sverige</span>
-                                    </div>
-                                </div>
-
-                                <a href="https://linkedin.com/in/iago-h-ferreira-de-souza-46214614b" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 rounded-xl bg-[#0b0f19] border border-slate-800 hover:border-cyan-500/50 transition-colors group">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-9 h-9 rounded-lg bg-sky-950 text-sky-400 flex items-center justify-center shrink-0">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </div>
-                                        <div>
-                                            <p class="text-[10px] text-slate-500 uppercase">LinkedIn</p>
-                                            <span class="text-slate-200 font-semibold group-hover:text-cyan-400 transition-colors">Iago H. Ferreira de Souza</span>
-                                        </div>
-                                    </div>
-                                    <i class="fas fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
-                                </a>
-
                             </div>
-
+                            <div class="flex gap-2">
+                                <a href="mailto:iago_henriquefs@hotmail.com" class="flex-1 py-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 font-bold text-xs transition-all flex items-center justify-center gap-2 border border-cyan-500/30">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Skicka E-post</span>
+                                </a>
+                                <button onclick="copyToClipboard('iago_henriquefs@hotmail.com', 'E-post kopierad till urklipp!')" class="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs transition-colors" title="Kopiera e-post">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
                         </div>
+
+                        <!-- Phone Box -->
+                        <div class="p-6 rounded-2xl bg-[#0b0f19] border border-slate-800 flex flex-col justify-between space-y-4 hover:border-emerald-500/60 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center text-xl shrink-0 border border-emerald-800">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-slate-500 uppercase tracking-wider">Telefon</p>
+                                    <a href="tel:+46736593010" class="text-sm sm:text-base font-bold text-slate-100 hover:text-emerald-400 transition-colors block">
+                                        +46 736 59 3010
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="tel:+46736593010" class="flex-1 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 font-bold text-xs transition-all flex items-center justify-center gap-2 border border-emerald-500/30">
+                                    <i class="fas fa-phone-flip"></i>
+                                    <span>Ring Nu</span>
+                                </a>
+                                <button onclick="copyToClipboard('+46736593010', 'Telefonnummer kopierat!')" class="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs transition-colors" title="Kopiera nummer">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <!-- Right: Direct Message Form -->
-                    <div class="lg:col-span-7">
-                        <form id="contact-form" class="p-8 rounded-2xl bg-[#161b22] border border-[#30363d] space-y-6">
-                            
-                            <!-- Success Banner -->
-                            <div id="contact-success" class="hidden p-4 rounded-xl bg-emerald-950/90 border border-emerald-800 text-emerald-300 text-xs sm:text-sm font-mono flex items-center gap-3">
-                                <i class="fas fa-circle-check text-lg text-emerald-400 shrink-0"></i>
-                                <span>Tack för ditt meddelande! Iago återkommer så snart som möjligt.</span>
+                    <!-- Location & LinkedIn Footer Row -->
+                    <div class="pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-slate-400">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-purple-950 text-purple-400 flex items-center justify-center shrink-0 border border-purple-800">
+                                <i class="fas fa-location-dot"></i>
                             </div>
+                            <span>Plats: <strong class="text-slate-200">Göteborg, Sverige</strong></span>
+                        </div>
 
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="c-name" class="block text-xs font-mono uppercase text-slate-400 mb-2">Ditt Namn</label>
-                                    <input type="text" id="c-name" required placeholder="T.ex. Anna Svensson" class="w-full px-4 py-3 rounded-xl bg-[#0b0f19] border border-[#30363d] text-white focus:outline-none focus:border-cyan-500 transition-colors text-sm">
-                                </div>
-                                <div>
-                                    <label for="c-email" class="block text-xs font-mono uppercase text-slate-400 mb-2">E-postadress</label>
-                                    <input type="email" id="c-email" required placeholder="namn@företag.se" class="w-full px-4 py-3 rounded-xl bg-[#0b0f19] border border-[#30363d] text-white focus:outline-none focus:border-cyan-500 transition-colors text-sm">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="c-subject" class="block text-xs font-mono uppercase text-slate-400 mb-2">Ämne / LIA Förfrågan</label>
-                                <input type="text" id="c-subject" required placeholder="T.ex. LIA-Praktikplats / Nätverkssäkerhet 2027" class="w-full px-4 py-3 rounded-xl bg-[#0b0f19] border border-[#30363d] text-white focus:outline-none focus:border-cyan-500 transition-colors text-sm">
-                            </div>
-
-                            <div>
-                                <label for="c-message" class="block text-xs font-mono uppercase text-slate-400 mb-2">Meddelande</label>
-                                <textarea id="c-message" rows="4" required placeholder="Skriv ditt meddelande här..." class="w-full px-4 py-3 rounded-xl bg-[#0b0f19] border border-[#30363d] text-white focus:outline-none focus:border-cyan-500 transition-colors text-sm resize-none"></textarea>
-                            </div>
-
-                            <button type="submit" id="c-btn" class="w-full py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2 font-mono text-sm">
-                                <span>Skicka Meddelande</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-
-                        </form>
+                        <a href="https://linkedin.com/in/iago-h-ferreira-de-souza-46214614b" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-sky-950 hover:bg-sky-900 border border-sky-800 text-sky-300 font-bold transition-all flex items-center gap-2">
+                            <i class="fab fa-linkedin-in text-base"></i>
+                            <span>Anslut på LinkedIn</span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+                        </a>
                     </div>
 
                 </div>
@@ -1092,25 +1134,10 @@
     <!-- INTERACTIVE JAVASCRIPT                     -->
     <!-- ========================================== -->
     <script>
+        // Dynamic Footer Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // 1. Theme Switcher Toggle
-        const themeBtn = document.getElementById('theme-toggle');
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
-
-        themeBtn.addEventListener('click', () => {
-            const isDark = document.documentElement.classList.toggle('dark');
-            if (isDark) {
-                darkIcon.classList.add('hidden');
-                lightIcon.classList.remove('hidden');
-            } else {
-                lightIcon.classList.add('hidden');
-                darkIcon.classList.remove('hidden');
-            }
-        });
-
-        // 2. Mobile Menu Toggle
+        // 1. Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuOpen = document.getElementById('menu-icon-open');
@@ -1130,7 +1157,7 @@
             });
         });
 
-        // 3. Toast Notifications
+        // 2. Toast Notification Engine
         function showToast(message) {
             const toast = document.getElementById('toast-notification');
             const toastMsg = document.getElementById('toast-message');
@@ -1149,7 +1176,7 @@
             }, 3000);
         }
 
-        // Copy to clipboard fallback
+        // Copy to Clipboard Utility
         function copyToClipboard(text, successMsg) {
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(text).then(() => {
@@ -1170,7 +1197,7 @@
             }
         }
 
-        // 4. Interactive Terminal Shell Engine
+        // 3. Interactive Terminal Shell Engine
         const terminalOutput = document.getElementById('terminal-dynamic-output');
 
         function runCommand(cmd) {
@@ -1179,29 +1206,33 @@
                 res = `
 <div><span class="text-cyan-400">iago@netsec-gbg</span>:<span class="text-emerald-400">~</span>$ cat profile.txt</div>
 <div class="text-slate-400 pl-4 border-l-2 border-cyan-500/50 text-xs py-1">
-Name: Iago H. Ferreira de Souza<br/>
-Role: Specialist inom Nätverkssäkerhet (Student @ Folkuniversitetet)<br/>
-Location: Göteborg, Sweden<br/>
-Languages: Svenska, Engelska, Portugisiska, Spanska (All fluent)<br/>
-Focus: Network Security, Routing & Switching, Firewalls, System Hardening
+Namn: Iago H. Ferreira de Souza<br/>
+Utbildning: Specialist inom Nätverkssäkerhet (Folkuniversitetet YH)<br/>
+Plats: Göteborg, Sverige<br/>
+Språk: Svenska, Engelska, Portugisiska, Spanska (Flytande)<br/>
+Focus: Nätverkssäkerhet, Brandväggar, Routing & Switching, Systemhärdning
 </div>`;
             } else if (cmd === 'skills') {
                 res = `
-<div><span class="text-cyan-400">iago@netsec-gbg</span>:<span class="text-emerald-400">~</span>$ skills --list</div>
-<div class="text-slate-400 pl-4 border-l-2 border-emerald-500/50 text-xs py-1">
-[SYS] Linux, Windows, Cisco IOS, Debian, Windows Server<br/>
-[NET] TCP/IP, Subnetting, OSPF, BGP, VLAN, DNS, DHCP, nftables<br/>
-[SEC] Nmap, Burp Suite, Metasploit, Wireshark, Suricata, FortiGate, pfSense<br/>
-[DEV] C#, .NET Core, ASP.NET, REST APIs, SQL, Git, Python, Bash
+<div><span class="text-cyan-400">iago@netsec-gbg</span>:<span class="text-emerald-400">~</span>$ skills --market-competencies</div>
+<div class="text-slate-400 pl-4 border-l-2 border-emerald-500/50 text-xs py-1 space-y-1">
+<p><strong class="text-slate-200">[Nätverk & Routing]:</strong> Cisco IOS, OSPF, OSPFv3, EIGRP, RIPv2, VLAN, 802.1Q, Router-on-a-Stick, NAT/PAT, DHCP Relay, VLSM/CIDR, ACL, IPv6, Dualstack, BGP</p>
+<p><strong class="text-slate-200">[Brandväggar & Zoner]:</strong> FortiGate (FortiOS 7.x NGFW), Cisco ZBFW, pfSense, Linux nftables/iptables, WAN/LAN/DMZ</p>
+<p><strong class="text-slate-200">[Kryptering & VPN]:</strong> IPSec Site-to-Site (IKEv2, AES-256), WireGuard, OpenVPN, SSH-tunnlar, TLS 1.3, QUIC, PKI/X.509, OpenSSL</p>
+<p><strong class="text-slate-200">[Trafikanalys & IDS/IPS]:</strong> Suricata (NFQUEUE, DPI, Snort), Fail2Ban, Wireshark, tcpdump, conntrack, Pi-hole</p>
+<p><strong class="text-slate-200">[E-postinfrastruktur]:</strong> SPF, DKIM (RSA-2048), DMARC, DNSSEC (Postfix, Dovecot, BIND9)</p>
+<p><strong class="text-slate-200">[Server & Härdning]:</strong> Debian/Ubuntu, Win Server 2022 (GPO/AppLocker), AppArmor, 2FA, LUKS, RAID-5, Bash & PowerShell</p>
+<p><strong class="text-slate-200">[Offensiv Säkerhet]:</strong> Kali Linux, Metasploit, Nmap (NSE), CVSSv3 sårbarhetsbedömning</p>
+<p><strong class="text-slate-200">[Virtualisering]:</strong> GNS3, VMware Workstation/ESXi, Proxmox VE (kluster), KVM/QEMU</p>
 </div>`;
             } else if (cmd === 'labs') {
                 res = `
 <div><span class="text-cyan-400">iago@netsec-gbg</span>:<span class="text-emerald-400">~</span>$ show --labs</div>
 <div class="text-slate-400 pl-4 border-l-2 border-purple-500/50 text-xs py-1">
-▸ LAB 1: VLAN Segmentation, OSPF/BGP, FortiGate/pfSense, WireGuard/IPSec<br/>
-▸ LAB 2: Traffic Analysis, Kali Linux, Suricata IDS/IPS, Wireshark, CVSSv3<br/>
-▸ LAB 3: Proxmox VE, Windows/Linux Hardening, SPF/DKIM/DMARC/DNSSEC<br/>
-▸ LAB 4: .NET Software Security, REST API, Volvo Penta LIA
+▸ LAB 1: OSPF/BGP, VLAN, FortiGate 7.x, pfSense, IPSec & WireGuard VPN<br/>
+▸ LAB 2: Suricata IDS/IPS (NFQUEUE/DPI), Wireshark, Fail2Ban, Kali & Metasploit<br/>
+▸ LAB 3: Proxmox VE Kluster, Win Server 2022 GPO, LUKS, Postfix/Dovecot SPF/DKIM<br/>
+▸ LAB 4: .NET Software Security, REST API, C# Architecture, Volvo Penta LIA
 </div>`;
             } else if (cmd === 'lia-status') {
                 res = `
@@ -1215,8 +1246,8 @@ Status: <span class="text-emerald-400">Öppen för förslag och intervjuer i Gö
                 res = `
 <div><span class="text-cyan-400">iago@netsec-gbg</span>:<span class="text-emerald-400">~</span>$ get --contact-info</div>
 <div class="text-slate-400 pl-4 border-l-2 border-sky-500/50 text-xs py-1">
-Email: iago_henriquefs@hotmail.com<br/>
-Phone: +46 736 59 3010<br/>
+E-post: iago_henriquefs@hotmail.com<br/>
+Telefon: +46 736 59 3010<br/>
 LinkedIn: linkedin.com/in/iago-h-ferreira-de-souza-46214614b
 </div>`;
             }
@@ -1225,71 +1256,4 @@ LinkedIn: linkedin.com/in/iago-h-ferreira-de-souza-46214614b
             const termScreen = document.getElementById('terminal-screen');
             termScreen.scrollTop = termScreen.scrollHeight;
         }
-
-        function clearTerminal() {
-            terminalOutput.innerHTML = '';
-        }
-
-        // 5. Skills Category Filtering & Live Search
-        const filterBtns = document.querySelectorAll('.skill-filter-btn');
-        const skillCards = document.querySelectorAll('.skill-card');
-        const searchInput = document.getElementById('skill-search-input');
-
-        function filterSkills() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            const activeBtn = document.querySelector('.skill-filter-btn.active');
-            const filter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
-
-            skillCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                const textContent = card.textContent.toLowerCase();
-
-                const matchesCategory = (filter === 'all' || category === filter);
-                const matchesSearch = (searchTerm === '' || textContent.includes(searchTerm));
-
-                if (matchesCategory && matchesSearch) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('bg-cyan-500', 'text-slate-950', 'active');
-                    b.classList.add('bg-[#161b22]', 'text-slate-300');
-                });
-                btn.classList.add('bg-cyan-500', 'text-slate-950', 'active');
-                btn.classList.remove('bg-[#161b22]', 'text-slate-300');
-                filterSkills();
-            });
-        });
-
-        searchInput.addEventListener('input', filterSkills);
-
-        // 6. Contact Form Submission Handling
-        const contactForm = document.getElementById('contact-form');
-        const contactSuccess = document.getElementById('contact-success');
-        const cBtn = document.getElementById('c-btn');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            cBtn.disabled = true;
-            cBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Skickar...`;
-
-            setTimeout(() => {
-                cBtn.disabled = false;
-                cBtn.innerHTML = `<span>Skicka Meddelande</span><i class="fas fa-paper-plane"></i>`;
-                contactSuccess.classList.remove('hidden');
-                contactForm.reset();
-
-                setTimeout(() => {
-                    contactSuccess.classList.add('hidden');
-                }, 6000);
-            }, 800);
-        });
-    </script>
-</body>
-</html>
+<!-- ... existing code -->
